@@ -113,12 +113,24 @@ class _LoginPage extends State<LoginPage> with SingleTickerProviderStateMixin {
                           reference!.child(_idTextController!.value.text).onValue.listen((event) {
                             if(event.snapshot.value == null) {
                               makeDiaglog('아이디가 없습니다');
-                            } else
-                          })
+                            } else {
+                              reference!.child(_idTextController!.value.text).onChildAdded.listen((event) {
+                                User user = User.fromSnapshot(event.snapshot);
+                                var bytes = utf8.encode(_pwTextController!.value.text);
+                                var digest = sha1.convert(bytes);
+                                if (user.pw == digest.toString()) {
+                                  Navigator.of(context).pushReplacementNamed('/main', arguments: _idTextController!.value.text);
+                                } else {
+                                  makeDiaglog('비밀번호가 틀립니다');
+                                }
+                              });
+                            }
+                          });
                         }
                       },
-                          child: child)
+                          child: Text('로그인'))
                     ],
+                    mainAxisAlignment: MainAxisAlignment.center,
                   )
                 ],
               ),)
@@ -129,6 +141,7 @@ class _LoginPage extends State<LoginPage> with SingleTickerProviderStateMixin {
       ),
     );
   }
+  // 알림창 띄워주기
   void makeDiaglog(String text) {
     showDialog(
       context: context,
