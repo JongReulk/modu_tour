@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "263101889658",
+    "project_id": "modutour-d1ed3",
+    "storage_bucket": "modutour-d1ed3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:263101889658:android:f8abd7a7ddb174d17d4fc3",
+        "android_client_info": {
+          "package_name": "com.tenriver.modu_tour"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "263101889658-attl2hi9anukir8pdvoidqj4ac0vn3it.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBK_otJCz2tJB8455_vOYT8ezHr4wtib4Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "263101889658-attl2hi9anukir8pdvoidqj4ac0vn3it.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
